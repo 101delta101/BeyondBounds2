@@ -8,7 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Heading from '../../Components/Heading';
 import BusinessPhotos from './BusinessPhotos';
 import AboutMe from './AboutMe';
-import Bookingmodal from './BookingModal';
+import BookingModal from './BookingModal';
 
 
 export default function BusinessDetail() {
@@ -68,8 +68,17 @@ export default function BusinessDetail() {
             <Text style={{fontFamily:'outfit-medium',color:Colors.WHITE,textAlign:"center"}}>Book Now</Text>
         </TouchableOpacity>
     </View>
-    <Modal animationType="slide" visible={showModal}>
-        <Bookingmodal/>
+
+    {/*booking modal*/}
+
+
+    <Modal 
+    animationType="slide" 
+    visible={showModal}>
+
+        <BookingModal 
+        businessId={business?.id}
+        hideModal={()=>setShowModal(false)}/>
     </Modal>
     </View>
     

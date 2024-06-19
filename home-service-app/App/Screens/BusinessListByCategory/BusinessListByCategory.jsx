@@ -48,7 +48,9 @@ export default function BusinessListByCategory() {
     <View style={{padding:20,paddingTop:30}}>  
       <PageHeading title={param.category}/>
       {businessList?.length>0?
-      <FlatList data={businessList} renderItem={({item,index})=>(
+      <FlatList 
+      data={businessList} 
+      renderItem={({item,index})=>(
         <BusinessListByCategoryItem business={item}/>
       )}/>:
       <Text style={{fontFamily:"outfit-medium",marginTop:20,fontSize:20}}>No Business Found</Text>
